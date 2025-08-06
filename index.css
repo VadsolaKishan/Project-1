@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e1e2f, #2b2b4b);
+    color: #fff;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 1.2s ease;
+}
+
+/* Title */
+h1 {
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #ffcc70;
+    text-shadow: 0 0 15px rgba(255, 204, 112, 0.6);
+}
+
+/* Game Board */
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Boxes (Cells) */
+.box {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #ff6a95, #ffc46b);
+    border: none;
+    border-radius: 15px;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transition: all 0.35s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 150, 100, 0.5);
+}
+
+.box:active {
+    transform: scale(0.95);
+    background: linear-gradient(145deg, #ff7aab, #ffd58a);
+}
+
+/* Reset Button */
+.resetBtn{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#ffcc70;
+    color:#2b2b4b;
+    font-weight:bold;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.resetBtn:hover {
+    background:#ffd58a;
+    transform:translateY(-2px);
+}
+
+/* ✅ New Game Button */
+.newGame {
+    margin-bottom: 20px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #70ffb8, #3ed3a3);
+    color: #2b2b4b;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 255, 170, 0.3);
+    transition: 0.3s;
+}
+
+.newGame:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(145deg, #5fffb0, #30c795);
+    box-shadow: 0 8px 20px rgba(0, 255, 170, 0.45);
+}
+
+/* Subtle Fade Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* 📱 Responsive for Phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 25px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .game {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 10px;
+    }
+
+    .box {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        border-radius: 10px;
+    }
+
+    .resetBtn, .newGame {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
